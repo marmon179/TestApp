@@ -6,24 +6,25 @@ import {Logo} from '../../components/common/logo/Logo';
 import {Title} from '../../components/title/Title';
 import {InputFormik} from '../../components/common/inputFormik/InputFormik';
 import {Button, Palette, Size} from '../../components/common/button/Button';
-import { Redirect } from 'react-router-dom';
-import { PATH } from '../../Routes';
+import {Redirect} from 'react-router-dom';
+import {PATH} from '../../Routes';
+import {Loading} from '../../components/common/loading/Loading';
 
 export type PropsType = {
     initialValues: initialValueType
     onSubmit: (values: initialValueType) => void
-    isLoggedIn:boolean
-    // disable: boolean
-    // loading: boolean
+    isLoggedIn: boolean
+    buttonDisable: boolean
+    loading: boolean
     validationSchema: any
 }
 
 export const Login: React.FC<PropsType> = React.memo(props => {
 
-    const {initialValues, onSubmit, validationSchema} = props
+    const {initialValues, onSubmit, validationSchema, loading, buttonDisable} = props
 
-    if(props.isLoggedIn) {
-        return <Redirect to={PATH.PROFILE} />
+    if (props.isLoggedIn) {
+        return <Redirect to={PATH.PROFILE}/>
     }
 
     return (
@@ -34,7 +35,7 @@ export const Login: React.FC<PropsType> = React.memo(props => {
         >
             <div className={style.form}>
 
-
+                {loading && <Loading/>}
                 <div className={style.containerForm}>
                     <div className={style.formWrapper}>
 
@@ -56,6 +57,7 @@ export const Login: React.FC<PropsType> = React.memo(props => {
 
                             <div className={style.buttonInner}>
                                 <Button size={Size.big} palette={Palette.primary} title="Submit"
+                                        disabled={buttonDisable}
                                 />
                             </div>
                         </Form>

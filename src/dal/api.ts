@@ -2,10 +2,12 @@ import axios from 'axios';
 
 const instance = axios.create({
     baseURL: 'https://tager.dev.ozitag.com',
-    headers:{
-        Authorization: `Bearer ${accessToken}`
+    headers: {
+        Authorization: `Bearer ${sessionStorage.getItem('user')}`
     }
+
 })
+
 //api
 export const authAPI = {
     login(data: LoginParamsType) {
@@ -28,17 +30,21 @@ export type LoginParamsType = {
 
 /** Response Types */
 export type AuthMeResponseType = {
-    tokenType: string,
-    expiresAt: number,
-    accessToken: string,
-    refreshToken: string
+    data: {
+        tokenType: null,
+        expiresAt: number,
+        accessToken: string,
+        refreshToken: string
+    }
 }
 
 type OtherResponseType = {
     success: boolean
 }
 
-interface FetchProfileType {
-    name: string
-    email: string
+export interface FetchProfileType {
+   data:{
+       name: string
+       email: string
+   }
 }

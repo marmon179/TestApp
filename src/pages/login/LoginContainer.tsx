@@ -4,11 +4,14 @@ import {Login} from './Login';
 import {useDispatch, useSelector} from 'react-redux';
 import {setIsLoggedTC} from '../../bll/app-reducer';
 import {AppStateType} from '../../bll/store';
+import {useCallback} from 'react';
 
 
 export const LoginContainer = () => {
     const dispatch = useDispatch()
-    const isLoggedIn = useSelector<AppStateType,boolean>( state => state.app.isLoggedIn)
+    const isLoggedIn = useSelector<AppStateType, boolean>(state => state.app.isLoggedIn)
+    const loading = useSelector<AppStateType, boolean>(state => state.app.loading)
+    const buttonDisable = useSelector<AppStateType, boolean>(state => state.app.buttonDisable)
 
     const initialValues: initialValueType = {
         clientId: 1,
@@ -26,11 +29,9 @@ export const LoginContainer = () => {
 
     })
 
-    const onSubmit = React.useCallback((values: any) => {
+    const onSubmit = useCallback((values: initialValueType) => {
         dispatch(setIsLoggedTC(values))
-        // alert(JSON.stringify(values))
-
-    }, [])
+    }, [dispatch])
     return (
         <div>
             <Login
@@ -38,6 +39,8 @@ export const LoginContainer = () => {
                 initialValues={initialValues}
                 onSubmit={onSubmit}
                 isLoggedIn={isLoggedIn}
+                loading={loading}
+                buttonDisable={buttonDisable}
             />
 
         </div>
