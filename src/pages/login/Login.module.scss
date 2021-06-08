@@ -1,0 +1,52 @@
+@import "./src/styles/mixins.scss";
+
+.containerForm {
+    padding: 60px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.formWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 600px;
+    background: #F9F9FE;
+    width: 413px;
+    border-radius: 8px;
+}
+
+.linkForgotPassword {
+    position: relative;
+    left: 240px;
+    @include textSan("San Francico", 14px, 400, 17px);
+    color: #2d2e46;
+    text-decoration: none;
+}
+
+.buttonInner {
+    margin-top: 150px;
+    display: flex;
+    justify-content: center;
+}
+
+.blockSingUp {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 31px;
+}
+
+.formText {
+    @include textSan("san francico", 14px, 600, 24px);
+    color: #2D2E46;
+    opacity: 0.5;
+}
+
+.linkSingUp {
+    margin-top: 11px;
+    @include textSan("san francico", 16px, 600, 24px);
+    text-decoration: none;
+}
+

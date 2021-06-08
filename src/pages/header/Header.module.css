@@ -1,0 +1,32 @@
+.link {
+    text-decoration: none;
+    margin: 10px;
+    color: #8fa7a2;
+    font-weight: 700;
+    text-shadow: none;
+}
+
+.link:before {
+    color: #fff;
+    content: attr(data-hover);
+    position: absolute;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.link:hover {
+    color: #1abc9c;
+}
+
+.active {
+    color: #FAAB22;
+}
+
+.header {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.header:hover {
+    transition-duration: 500ms;
+    transform: translate(0);
+}

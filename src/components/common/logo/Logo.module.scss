@@ -1,0 +1,5 @@
+@import "./src/styles/mixins";
+
+.logo {
+  @include textPop("Poppins",26px, 600, 39px);
+}

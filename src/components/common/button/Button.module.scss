@@ -1,0 +1,59 @@
+@import "./src/styles/mixins";
+@import "./src/styles/vars";
+
+.btn {
+  height: 36px;
+  border-radius: $borderRadius;
+  background: #D7D8EF;
+  @include textSan("San Francico", 16px, 500, 19px);
+  border: none;
+
+  //Size Style
+  &.small {
+    width: 124px;
+  }
+
+  &.medium {
+    width: 187px;
+  }
+
+  &.big {
+    width: 266px;
+  }
+
+  //Palette Color Style
+  &.default {
+    background: #D7D8EF;
+    color: $primaryColorBtn;
+  }
+
+  &.primary {
+    background: $primaryColorBtn;
+    color: #ECECF9;
+  }
+
+  &.secondary {
+    background: #f9b;
+    color: #ECECF9;
+  }
+
+  //Variant Style
+  &.defaultVariant {
+
+  }
+  &.primaryVariant {
+    border-radius: 2px;
+    width: auto;
+    padding: 5px 6px;
+  }
+  &.secondaryVariant {
+
+  }
+
+  &:disabled {
+    cursor: auto;
+    background-color: #8fa7a2;
+    color: #fff;
+    box-shadow: 0 0 0;
+  }
+}

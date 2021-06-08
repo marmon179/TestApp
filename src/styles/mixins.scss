@@ -1,0 +1,16 @@
+@import "./vars.scss";
+
+
+@mixin textSan($fontFamily,$fontSize,$fontWeight,$lineHeight) {
+    font-family: "San Francisco";
+    font-size: $fontSize;
+    font-weight: $fontWeight;
+    line-height: $lineHeight;
+}
+
+@mixin textPop($fontFamily,$fontSize,$fontWeight,$lineHeight) {
+    font-family: 'Poppins';
+    font-size: $fontSize;
+    font-weight: $fontWeight;
+    line-height: $lineHeight;
+}

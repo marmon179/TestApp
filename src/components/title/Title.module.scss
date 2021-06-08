@@ -1,0 +1,6 @@
+@import "./src/styles/mixins";
+@import "./src/styles/vars";
+
+.title {
+  @include textPop("Poppins",22px, 600, 33px);
+}
