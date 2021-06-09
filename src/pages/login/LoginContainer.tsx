@@ -7,7 +7,7 @@ import {AppStateType} from '../../bll/store';
 import {useCallback} from 'react';
 
 
-export const LoginContainer = () => {
+export const LoginContainer = React.memo(() => {
     const dispatch = useDispatch()
     const isLoggedIn = useSelector<AppStateType, boolean>(state => state.app.isLoggedIn)
     const loading = useSelector<AppStateType, boolean>(state => state.app.loading)
@@ -45,7 +45,7 @@ export const LoginContainer = () => {
 
         </div>
     );
-};
+})
 //types
 export type initialValueType = {
     clientId: number

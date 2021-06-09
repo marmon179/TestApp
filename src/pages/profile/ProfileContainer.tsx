@@ -6,7 +6,7 @@ import {PATH} from '../../Routes';
 import {fetchUserTC, logoutTC, UserType} from '../../bll/app-reducer';
 import {Profile} from './Profile';
 
-export const ProfileContainer = () => {
+export const ProfileContainer = React.memo(() => {
     const isLoggedIn = useSelector<AppStateType, boolean>(state => state.app.isLoggedIn)
     const user = useSelector<AppStateType, UserType>(state => state.app.user)
     const dispatch = useDispatch()
@@ -25,7 +25,7 @@ export const ProfileContainer = () => {
     return (
         <Profile user={user} logoutHandler={logoutHandler}/>
     );
-}
+})
 
 
 
