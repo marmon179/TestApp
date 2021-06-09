@@ -38,7 +38,8 @@ export const Login: React.FC<PropsType> = React.memo(props => {
                 {loading && <Loading/>}
                 <div className={style.containerForm}>
                     <div className={style.formWrapper}>
-
+                    <p>email:user@ozitag.com</p>
+                    <p>password:user</p>
                         <Logo/>
                         <Title title="Sign In"/>
 

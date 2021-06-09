@@ -12,10 +12,11 @@ const instance = axios.create({
 export const authAPI = {
     login(data: LoginParamsType) {
         return instance.post<AuthMeResponseType>('/api/auth/user', data)
+
     },
-    logout() {
-        return instance.post<OtherResponseType>('/api/tager/user/profile/logout')
-    },
+    // logout() {
+    //     return instance.post<OtherResponseType>('/api/tager/user/profile/logout', {})
+    // },
     fetch() {
         return instance.get<FetchProfileType>('/api/tager/user/profile')
     }

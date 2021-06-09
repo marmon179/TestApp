@@ -16,7 +16,7 @@ export const ProfileContainer = () => {
     }, [])
 
     const logoutHandler = useCallback(() => {
-        dispatch(logoutTC(),)
+        dispatch(logoutTC())
     }, [dispatch])
 
     if (!isLoggedIn) {

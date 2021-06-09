@@ -45,17 +45,17 @@ export const setIsLoggedTC = (data: LoginParamsType): AppThunk => (dispatch) => 
         )
 }
 export const logoutTC = (): AppThunk => (dispatch) => {
-    authAPI.logout()
-        .then(res => {
-            dispatch(setIsLogged(false))
-
-        })
+    dispatch(setIsLogged(false))
+    dispatch(disableButton(false))
+    // authAPI.logoutUs()
+    //     .then(res => {
+    //
+    //     })
 }
 export const fetchUserTC = (): AppThunk => (dispatch) => {
     authAPI.fetch()
         .then(res => {
             dispatch(setUser(res.data.data))
-
         })
 }
 
